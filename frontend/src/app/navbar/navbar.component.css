@@ -1,0 +1,112 @@
+<<<<<<< HEAD
+/* @import "bulma/css/bulma.css"; */
+=======
+#profile {
+  padding: 0.5rem;
+  margin: auto;
+  max-width: auto;
+  max-height: 75px;
+  background-color: #000;
+  /* flexbox*/
+  display: flex;
+  flex-direction: row; /* https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction */
+  flex-wrap: wrap; /* https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap */
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+#profile-username {
+  display: block;
+  color: #8bff76;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+#profile-box {
+  padding-right: 20px;
+  background-color: #8bff76;
+  padding: 0.5rem;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  width: 15%;
+  min-width: 10px;
+  margin: 0.5rem auto;
+  box-sizing: border-box;
+}
+
+#profile-box a:hover {
+  background-color: #ff8781;
+  color: #f0eff4;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+#search-recipe {
+  padding: 0.5rem;
+}
+
+@media (min-width: 600px) {
+  a {
+    width: 18%; /* changes how much space the top 4 heroes take place*/
+    box-sizing: content-box;
+  }
+}
+
+img {
+  background-color: #f0eff4;
+  border-radius: 40px;
+}
+
+#search-box {
+  padding: 0.5rem; /* padding for search box*/
+  width: 100%;
+  max-width: 1000px; /* sets max width of search box*/
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: block;
+}
+#search-box:focus {
+  outline: #ff8781 auto 1px; /* when the search box is clicked/ focused, change outline color */
+}
+
+li {
+  list-style-type: none; /* removes bullets points of list*/
+}
+
+#search-result li a {
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  /* code above changes the outline line of the search result*/
+  display: inline-block;
+  width: 100%; /* affects the width of search box result*/
+  max-width: 600px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: black;
+}
+#search-result li a:hover {
+  background-color: #857670;
+  color: white;
+}
+ul#search-result {
+  /* moves search result listings*/
+  margin-top: 0;
+  padding-left: 0;
+}
+>>>>>>> f3e5ba422c663bc6bb37c361120302837356f54f
+
+.profile {
+  margin-right: 10px;
+}
+
+.login {
+  margin-right: 10px;
+}
+
+.home {
+  margin-left: 25px;
+  margin-top: 5px;
+}

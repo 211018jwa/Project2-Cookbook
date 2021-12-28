@@ -1,0 +1,111 @@
+<div class="images">
+  <div class="wrapper">
+    <div class="container has-background-link-dark">
+      <h2 class="is-size-3">Please fill your information in the field below</h2>
+      <div class="field">
+        <label class="label has-text-light is-size-4">Username</label>
+        <input
+          type="text"
+          class="input is-primary"
+          placeholder="UserName"
+          id="username"
+          is-size-4
+          [(ngModel)]="newUser.username"
+        />
+      </div>
+      <div class="field1">
+        <label class="label has-text-light is-size-4">Password</label>
+        <input
+          type="password"
+          class="input is-primary"
+          placeholder="Password"
+          id="Password"
+          is-size-4
+          [(ngModel)]="newUser.password"
+        />
+      </div>
+      <div class="flex">
+        <div class="field2">
+          <label class="label has-text-light is-size-4" id="firstName"
+            >First name</label
+          >
+          <input
+            type="text"
+            class="input is-primary"
+            placeholder="first name"
+            id="firstName"
+            is-size-4
+            [(ngModel)]="newUser.firstName"
+          />
+        </div>
+        <div class="field3">
+          <label class="label has-text-light is-size-4">Last name</label>
+          <input
+            type="text"
+            class="input is-primary"
+            placeholder="Last name"
+            id="lastName"
+            is-size-4
+            [(ngModel)]="newUser.lastName"
+          />
+        </div>
+      </div>
+
+      <div class="field1">
+        <label class="label has-text-light is-size-4">Phone number</label>
+        <input
+          type="tel"
+          class="input is-primary"
+          placeholder="Phone number"
+          id="phoneNumber"
+          is-size-4
+          [(ngModel)]="newUser.phoneNumber"
+        />
+      </div>
+      <div class="field1">
+        <label class="label has-text-light is-size-4">Email</label>
+        <input
+          type="email"
+          class="input is-primary"
+          placeholder="Email"
+          id="Email"
+          [(ngModel)]="newUser.email"
+          is-size-4
+        />
+      </div>
+
+      <div class="field">
+        <label class="label has-text-light is-size-4">Age</label>
+        <input
+          type="text"
+          class="input is-primary ageBtn"
+          placeholder="Age"
+          id="userAge"
+          is-size-4
+          [(ngModel)]="newUser.age"
+        />
+      </div>
+
+      <div class="buttons">
+        <button
+          class="button is-danger is-size-4 subBtn"
+          id="submitBtn"
+          is-size-4
+          (click)="submit()"
+        >
+          Submit
+        </button>
+        <p class="help has-text-success" id="submitHelper">
+          {{ errorMessage }}
+        </p>
+        <button
+          class="button is-normal is-size-4"
+          id="cancelBtn"
+          (click)="cancel()"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

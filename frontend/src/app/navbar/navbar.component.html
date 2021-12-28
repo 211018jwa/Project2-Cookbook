@@ -1,0 +1,126 @@
+<div id="profile">
+  <img
+    class="is-rounded"
+    id="user-profile-picture"
+    href="https://icons8.com/icon/52448/admin-settings-male"
+    [src]="userImageLink"
+  />
+  <img
+    class="home"
+    src="https://img.icons8.com/color/48/000000/home.png"
+    routerLink="/welcome"
+  />
+  <!--userImageLink-->
+  <p id="profile-username">Bob Ross</p>
+  <div class="wrapper" id="profile-box">
+    <!-- navigates to user profile component/ or cookbook summary-->
+
+    <a class="profile" routerLink="/userprofile" class="profile">Profile</a>
+    <!-- navigates to login page, if not logged in, if they are then it will say sign out-->
+    <!-- <button *ngIf="loggedInTrue" (click)="signIn()" routerLink="/login">Sign in</button> -->
+    <a
+      class="sign"
+      *ngIf="loggedInTrue"
+      (click)="signIn()"
+      routerLink="/login"
+      class="login"
+      >Sign in</a
+    >
+    <a
+      class=""
+      *ngIf="loggedInFalse"
+      (click)="signOut()"
+      routerLink="/welcome"
+      class="login"
+      >Sign out</a
+    >
+    <!-- how to get login status https://github.com/211018jwa/training/tree/main/week-10/day-2/gradify-sb-angular/src/app/login-page  -->
+    <a class="signup" routerLink="/register">Sign up</a>
+    <!-- option 3 https://stackoverflow.com/questions/55373526/angular-7-search-bar-and-results-in-different-views -->
+
+    <!-- routerlink set to /welcome matches the route to HeroesComponent, 
+      routerLink is the selector for the RouterLink directive that turns user clicks into router navigations-->
+  </div>
+
+  <!-- section to use filters-->
+  <div class="" id="search-recipe">
+    <!-- this should give an example https://stackblitz.com/edit/ng-search-filter -->
+    <div class="navbar-item has-dropdown is-hoverable">
+      <select
+        class=""
+        name="Filters"
+        [(ngModel)]="filterState"
+        (ngModelChange)="filterItem($event)"
+        id="filter-drop-down"
+      >
+        <option class="navbar-item" value="name">Name</option>
+        <option class="navbar-item" value="ingredient">Ingredient</option>
+        <option class="navbar-item" value="category">Category</option>
+        <option class="navbar-item" value="area">Area</option>
+      </select>
+    </div>
+
+    <!-- will display a list of recipes names based on what is currently being in the search box-->
+
+    <!-- section for search bar-->
+    <!-- might be useful: https://stackblitz.com/edit/simple-search-filter Just need to find a way to call the api search by ingredient-->
+    <!-- other references:
+          
+          to make search show results changing dynamically
+          https://www.npmjs.com/package/ng2-nested-search
+          https://stackblitz.com/edit/search-filter-ng2   
+      
+      -->
+    <div id="search-box">
+      <input
+        #searchBox
+        class=""
+        placeholder="Search recipe here"
+        (input)="search(searchBox.value)"
+      />
+      <!-- # is a template variable, https://angular.io/guide/template-reference-variables -->
+      <!-- Will need to pass value from searchbox to recipe summary-->
+      <button
+        class="button is-danger"
+        id="search-btn"
+        routerLink="/recipesummary"
+      >
+        Search recipe
+      </button>
+      <!-- <button id="search-btn" (click)="search(searchBox.value)">Search recipe</button> -->
+      <!-- info on two-way databinding https://angular.io/guide/two-way-binding-->
+      <ul class="" id="search-result">
+        <li *ngFor="let recipe of recipes$ | async">
+          <a routerLink="/recipedetailed/{{ recipe.idMeal }}">
+            {{ recipe.strMeal }} --I believe it should match the value in the
+            recipe interface--
+          </a>
+        </li>
+      </ul>
+      <button
+        class="button is-warning"
+        id="random-recipe"
+        routerLink="/randomrecipe"
+      >
+        Surprise me!
+      </button>
+    </div>
+
+    <!-- <div>
+          <input type="text"name="foodName" placeholder="Enter Food "class="food-input"[(ngModel)]="inputFood"/>
+          <button id="food-btn" (click)="search(inputFood.value)" routerLink="">Search by Name</button>
+      </div> -->
+
+    <!-- section for logo-->
+    <div id="brand-logo">
+      <!--Don't think I need name for the website as the logo should be enough-->
+      <img
+        class="is-rounded"
+        href="https://icons8.com/icon/pXJTVvE8w6Ub/love-book"
+        id="cookbook-logo"
+        [src]="logoImageLink"
+      />
+      <!--logoImageLink-->
+    </div>
+  </div>
+</div>

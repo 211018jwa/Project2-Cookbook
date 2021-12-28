@@ -1,0 +1,25 @@
+.n-flex {
+  display: flex;
+  padding: 5px;
+}
+
+.n-flex > div {
+  margin: 6px;
+}
+
+.fstName {
+  padding-right: 10px;
+}
+
+.pflex {
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  background-color: azure;
+  border: solid;
+  width: 30%;
+}
+.labels {
+  margin-right: 15px;
+}

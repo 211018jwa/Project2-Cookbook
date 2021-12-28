@@ -1,0 +1,62 @@
+<div class = "columns is-multiline is-mobile is-centered">
+
+    <div class = "column is-full has-text-centered" style = "background-color: #8BFF76;">
+  
+      <h1 class = "title is-1"> {{ recipeToBeDisplayed.strMeal }}</h1>
+  
+    </div>
+  
+    <div class = "column is-one-third has-text-centered" style = "background-color: #000000">
+  
+      <img class = "image" [src] = "recipeToBeDisplayed.strMealThumb">
+  
+    </div>
+  
+    <div class = "column is-two-thirds has-text-centered" style = "background-color: #FF8781">
+  
+      <h1 class="title is-2">recipe info panel</h1>
+  
+      <div class = "columns is-multiline">
+  
+        <div class = "column is-half">
+  
+          <h1 class = "subtitle is-6"> likes </h1>
+  
+        </div>
+  
+        <div class = "column is-half">
+  
+          <h1 class = "subtitle is-6"> followers </h1>
+  
+        </div>
+  
+        <div class =  "column is-full">
+  
+          <h1 class = "subtitle is-3">Ingredients</h1>
+  
+          <ol>
+            <li *ngFor = "let ingredient of ingredients"> {{ ingredient }}</li>
+          </ol>
+  
+  
+        </div>
+  
+      </div>
+  
+  
+  
+    </div>
+  
+    <div class = "column is-full has-text-centered">
+  
+      <div class = "content">
+  
+        <p>{{ recipeToBeDisplayed.strInstructions }}</p>
+  
+      </div>
+  
+    </div>
+  
+  
+  </div>
+  
